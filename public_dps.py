@@ -33,25 +33,12 @@ with col2:
 #code for prediction
 diab_diagnosis=''
 if st.button('Diabetes Test Result'):
-  if not Pregnancies:
-     st.error("Please enter number of pregnancies")  
-  if not Glucose:
-     st.error("Please enter Glucose Level") 
-  if not BloodPressure:
-     st.error("Please Blood Pressure Value")    
-  if not SkinThickness:
-     st.error("Please enter Skin Thickness Value")  
-  if not Insulin:
-     st.error("Please enter Insulin Value") 
-  if not BMI:
-     st.error("Please enter BMI Value")    
-  if not DiabetesPedigreeFunction:
-     st.error("Please Diabetes Pedigree Function Value")      
-  if not Age:
-     st.error("Please enter age")         
-  diab_prediction=diabetes_model.predict([[Pregnancies,Glucose,BloodPressure,SkinThickness,Insulin,BMI,DiabetesPedigreeFunction,Age]])
-  if diab_prediction[0]==1:
-     diab_diagnosis='The person is diabetic'
-  else:
-     diab_diagnosis='The person is not diabetic'
-st.success(diab_diagnosis)     
+  if not Pregnancies or not Glucose or not BloodPressure or not SkinThickness or not Insulin or not BMI or not DiabetesPedigreeFunction or not Age:
+     st.error("Please enter all the fields")   
+  else:    
+     diab_prediction=diabetes_model.predict([[Pregnancies,Glucose,BloodPressure,SkinThickness,Insulin,BMI,DiabetesPedigreeFunction,Age]])
+     if diab_prediction[0]==1:
+       diab_diagnosis='The person is diabetic'
+     else:
+       diab_diagnosis='The person is not diabetic'
+     st.success(diab_diagnosis)     
