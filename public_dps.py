@@ -15,21 +15,37 @@ diabetes_model=pickle.load(open("diabetes_model.sav",'rb'))
 st.title('Diabetes Prediction Using ML')
 col1,col2,col3=st.columns(3)
 with col1:
-  Pregnancies=st.text_input('Number of Pregnancies',required=True)
+  Pregnancies=st.text_input('Number of Pregnancies')
+  if not Pregnancies:
+        st.error("Please enter number of pregnancies")  
 with col2: 
-  Glucose=st.text_input('Glucose Level', required=True)
+  Glucose=st.text_input('Glucose Level')
+  if not Glucose:
+        st.error("Please enter Glucose Level")  
 with col3:
-  BloodPressure=st.text_input('Blood Pressure Value', required=True)
+  BloodPressure=st.text_input('Blood Pressure Value')
+  if not BloodPressure:
+        st.error("Please Blood Pressure Value")  
 with col1:
-  SkinThickness=st.text_input('Skin Thickness Value',required=True)
+  SkinThickness=st.text_input('Skin Thickness Value')
+  if not SkinThickness:
+        st.error("Please enter Skin Thickness Value")  
 with col2:
-  Insulin=st.text_input('Insulin Value',required=True)
+  Insulin=st.text_input('Insulin Value')
+  if not Insulin:
+        st.error("Please enter Insulin Value")   
 with col3:
-  BMI=st.text_input('BMI Value',required=True)
+  BMI=st.text_input('BMI Value')
+  if not BMI:
+        st.error("Please enter BMI Value")   
 with col1:
-  DiabetesPedigreeFunction=st.text_input('Diabetes Pedigree Function Value',required=True)
+  DiabetesPedigreeFunction=st.text_input('Diabetes Pedigree Function Value')
+  if not DiabetesPedigreeFunction:
+        st.error("Please Diabetes Pedigree Function Value")   
 with col2:
-  Age=st.text_input('Age of the person',required=True)
+  Age=st.text_input('Age of the person')
+  if not Age:
+        st.error("Please enter age")   
 #code for prediction
 diab_diagnosis=''
 if st.button('Diabetes Test Result'):
