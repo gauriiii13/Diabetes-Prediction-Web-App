@@ -15,21 +15,21 @@ diabetes_model=pickle.load(open("diabetes_model.sav",'rb'))
 st.title('Diabetes Prediction Using ML')
 col1,col2,col3=st.columns(3)
 with col1:
-  Pregnancies=st.text_input('Number of Pregnancies')
+  Pregnancies=st.text_input('Number of Pregnancies',required=True)
 with col2: 
-  Glucose=st.text_input('Glucose Level')
+  Glucose=st.text_input('Glucose Level', required=True)
 with col3:
-  BloodPressure=st.text_input('Blood Pressure Value')
+  BloodPressure=st.text_input('Blood Pressure Value', required=True)
 with col1:
-  SkinThickness=st.text_input('Skin Thickness Value')
+  SkinThickness=st.text_input('Skin Thickness Value',required=True)
 with col2:
-  Insulin=st.text_input('Insulin Value')
+  Insulin=st.text_input('Insulin Value',required=True)
 with col3:
-  BMI=st.text_input('BMI Value')
+  BMI=st.text_input('BMI Value',required=True)
 with col1:
-  DiabetesPedigreeFunction=st.text_input('Diabetes Pedigree Function Value')
+  DiabetesPedigreeFunction=st.text_input('Diabetes Pedigree Function Value',required=True)
 with col2:
-  Age=st.text_input('Age of the person')
+  Age=st.text_input('Age of the person',required=True)
 #code for prediction
 diab_diagnosis=''
 if st.button('Diabetes Test Result'):
